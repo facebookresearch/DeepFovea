@@ -15,35 +15,28 @@ At the moment we are releasing only the full graph structure without the weights
 # Model
 ## Generator
 
-Generator model is a U-Net with recurrent decoder blocks. The naming convention is ```glEnc_XtoY``` for encoder blocks and ```glDec_YtoX``` for the corresponding decoder blocks, where X and Y change with the depth. The network is trained on 128x128 videos.
+Generator model is a U-Net with recurrent decoder blocks.
 
 <p align='center'>
-  <img src='img/g_model.png' width='200'/>
+  <img src='img/g_model.png' width='1000'/>
 </p>
 
 Each encoder block consists of two convolutions, with the second convolution having a stride 2. We use ELU activation function. There are total 5 encoders and 5 decoders with 32-64-128-128-128 features correspondingly. The model has about 3.2M parameters.
 
-<p align='center'>
-  <img src='img/encoder_block.png' width='200'/>
-</p>
-
 Each decoder block consists of an upsampling layer, a convolution and a recurrent convolution layer. The recurrent convolutional layer uses its output as another input on the next time step.
 
-<p align='center'>
-  <img src='img/decoder_block.png' width='200'/>
-</p>
-
-## Discriminator
-
-<p align='center'>
-  <img src='img/d_model.png' width='200'/>
-</p>
-
-The discriminator model consists of several 3D convolutions with residual connections. Each convolution operates on a whole video of 32 frames. This allows the discriminator to reason not only about spatial details, but also about the temporal artifacts. We are using spectral normalization in discriminator for the regularization. There is also a complementary discriminator with a similar architecture trained on the FFT representation of the input video.
+The network is trained on 128x128 videos.
 
 ## Losses
+
+<p align='center'>
+  <img src='img/losses.png' width='1000'/>
+</p>
+
 We are using multiple losses to make the reconstruction plausible
-* Adversarial loss (Following WGAN framework)
+* Adversarial loss (Following WGAN framework) 
+  
+  The discriminator model consists of several 3D convolutions with residual connections. Each convolution operates on a whole video of 32 frames. This allows the discriminator to reason not only about spatial details, but also about the temporal artifacts. We are using spectral normalization in discriminator for the regularization. There is also a complementary discriminator with a similar architecture trained on the FFT representation of the input video.
 * LPIPS loss to improve reconstruction of the spatial details
 * Optical flow loss to reduce the peripheral flicker
 
