@@ -40,7 +40,7 @@ We are using multiple losses to make the reconstruction plausible
 * LPIPS loss to improve reconstruction of the spatial details
 * Optical flow loss to reduce the peripheral flicker
 
-# Training code and weights
+# Pretrained model weights and binaries
 
 Coming soon.
 
