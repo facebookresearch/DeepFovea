@@ -8,7 +8,7 @@ This repository provides the materials related to the DeepFovea project from Fac
 
 If you use any materials from this repository, please cite the publication: Anton Kaplanyan, Anton Sochenov, Thomas Leimkuehler, Mikhail Okunev, Todd Goodall, Gizem Rufo, "DeepFovea: Neural Reconstruction for Foveated Rendering and Video Compression using Learned Statistics of Natural Videos", SIGGRAPH Asia 2019.
 
-At the moment we are releasing only the full graph structure without the weights. We are planning to release the source code and the final weights soon.
+At the moment we are releasing only the full graph structure without the weights. We are planning to release the demo binaries and the final weights soon.
 
 ```input_graph.pb``` file contains the network graph for both generator and discriminator.
 
