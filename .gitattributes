@@ -1,0 +1,10 @@
+* text=auto
+
+*.bin   binary
+*.flow  binary
+*.dll   binary
+*.pdb   binary
+*.lib   binary
+*.so    binary
+*.dylib binary
+*.png   binary

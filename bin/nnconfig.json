@@ -1,0 +1,10 @@
+{
+    "parent_data_path" : "",
+    "networks": {
+        "sig_32_fft": {
+            "path": "sig_32_fft/2",
+            "type": "InferWithVelocity"
+        }
+    },
+    "networksToLoad": ["sig_32_fft"]
+}

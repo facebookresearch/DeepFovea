@@ -1,0 +1,17 @@
+{
+    "gpus": [0],
+    "parentScenePathWin32" : "videos",
+    "parentScenePathLinux" : "videos",
+    "scenes": {
+        "screen": {
+            "color"        : "stern_360/png/frame.%04d.png",
+            "color_frames" : 10,
+            "fps"          : 25
+        },
+        "360": {
+            "color"        : "stern_360/png/frame.%04d.png",
+            "color_frames" : 10,
+            "fps"          : 25
+        }
+    }
+}
